@@ -11,10 +11,10 @@ public class Archiver {
     public static void main(String[] args) throws Exception {
         // открываем поток ввода
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введите полный путь архива:");
+        System.out.println("Введите полный путь архива включая имя будующего архива вместе с расширением .zip:");
         Path fullPathToArchive = Paths.get(reader.readLine());
         ZipFileManager zipFileManager = new ZipFileManager(fullPathToArchive);
-        System.out.println("Введите полный путь к файлу, который будем архивировать:");
+        System.out.println("Введите полный путь к файлу, который будем архивировать вместе с расширением:");
         zipFileManager.createZip(Paths.get(reader.readLine()));
     }
 }
