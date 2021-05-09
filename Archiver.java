@@ -1,5 +1,7 @@
 package com.javarush.task.task31.task3110;
 
+import com.javarush.task.task31.task3110.command.ExitCommand;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,5 +18,7 @@ public class Archiver {
         ZipFileManager zipFileManager = new ZipFileManager(fullPathToArchive);
         System.out.println("Введите полный путь к файлу, который будем архивировать вместе с расширением:");
         zipFileManager.createZip(Paths.get(reader.readLine()));
+        ExitCommand exitCommand = new ExitCommand();
+        exitCommand.execute();
     }
 }
